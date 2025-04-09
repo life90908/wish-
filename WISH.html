@@ -74,7 +74,7 @@
 
   <div class="balloons" id="balloons"></div>
 
-  <!-- إضافة الصوتين -->
+  
   <audio id="birthdayMusic" src="C:\Users\NDC 721\Desktop\0.0\happy-birthday-song-in-japanese-お誕生日のうた.mp3" controls></audio>
   <audio id="secondMusic" src="C:\Users\NDC 721\Desktop\0.0\مقطع صوتي واتساب بتاريخ 2025-04-07 في 23.52.24_1c1c86cc.mp3"></audio>
 
@@ -83,7 +83,7 @@
       const balloons = document.getElementById('balloons');
       balloons.style.display = 'block';
 
-      // إنشاء بالونات
+      
       for (let i = 0; i < 30; i++) {
         let b = document.createElement('div');
         b.classList.add('balloon');
@@ -93,7 +93,7 @@
         balloons.appendChild(b);
       }
 
-      // تشغيل الصوتين معًا
+     
       document.getElementById('birthdayMusic').play();
       document.getElementById('secondMusic').play();
     }
