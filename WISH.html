@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Omnia</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6f0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      color: #e60073;
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background-color: #ff66a3;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .balloons {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 60px;
+      background: #ff6699;
+      border-radius: 50% 50% 50% 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100%); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>عيد ميلاد سعيد يا أمنية!</h1>
+  <p>Happy Birthday Wish😉</p>
+  <button onclick="showBalloons()">افتح الهدية</button>
+
+  <div class="balloons" id="balloons"></div>
+
+  <!-- إضافة الصوتين -->
+  <audio id="birthdayMusic" src="C:\Users\NDC 721\Desktop\0.0\happy-birthday-song-in-japanese-お誕生日のうた.mp3" controls></audio>
+  <audio id="secondMusic" src="C:\Users\NDC 721\Desktop\0.0\مقطع صوتي واتساب بتاريخ 2025-04-07 في 23.52.24_1c1c86cc.mp3"></audio>
+
+  <script>
+    function showBalloons() {
+      const balloons = document.getElementById('balloons');
+      balloons.style.display = 'block';
+
+      // إنشاء بالونات
+      for (let i = 0; i < 30; i++) {
+        let b = document.createElement('div');
+        b.classList.add('balloon');
+        b.style.left = Math.random() * 100 + 'vw';
+        b.style.background = 'hsl(' + Math.random() * 360 + ', 70%, 70%)';
+        b.style.animationDuration = 4 + Math.random() * 4 + 's';
+        balloons.appendChild(b);
+      }
+
+      // تشغيل الصوتين معًا
+      document.getElementById('birthdayMusic').play();
+      document.getElementById('secondMusic').play();
+    }
+  </script>
+</body>
+</html>
